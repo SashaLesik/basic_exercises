@@ -13,7 +13,7 @@ for name in names:
 
 names = ['Оля', 'Петя', 'Вася', 'Маша']
 for name in names:
-    print(f'{name}: {len((name))}')
+    print(f'{name}: {len(name)}')
 
 
 # Задание 3
@@ -31,9 +31,9 @@ names = ['Оля', 'Петя', 'Вася', 'Маша']
 
 def gender_reveal(name):
     if is_male[name] is False:
-        return ('Женский')
+        return 'Женский'
     else:
-        return ('Мужской')
+        return 'Мужской'
 
 
 for name in names:
@@ -52,10 +52,9 @@ groups = [
     ['Вася', 'Маша', 'Саша', 'Женя'],
     ['Оля', 'Петя', 'Гриша'],
 ]
-count = 0
-for group in groups:
-    print(f' Группа {count+1} : {len(group)}')
-    count += 1
+
+for index, group in enumerate(groups, start=1):
+    print(f' Группа {index} : {len(group)} ученика')
 
 
 # Задание 5
@@ -69,8 +68,5 @@ groups = [
     ['Оля', 'Петя', 'Гриша'],
     ['Вася', 'Маша', 'Саша', 'Женя'],
 ]
-count = 0
-for group in groups:
-    listik = groups[count]
-    print(f' Группа {count+1} : {listik}')
-    count += 1
+for index, group in enumerate(groups, start=1):
+    print(f' Группа {index} : {group}')
