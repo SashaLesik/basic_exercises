@@ -5,6 +5,7 @@ names = ['Оля', 'Петя', 'Вася', 'Маша']
 for name in names:
     print(f'{name}\n')
 
+
 # Задание 2
 # Необходимо вывести имена всех учеников из списка, рядом с именем показать количество букв в нём
 # Пример вывода:
@@ -16,6 +17,9 @@ for name in names:
     print(f'{name}: {len(name)}')
 
 
+
+
+
 # Задание 3
 # Необходимо вывести имена всех учеников из списка, рядом с именем вывести пол ученика
 
@@ -25,8 +29,8 @@ is_male = {
     'Вася': True,
     'Маша': False,
 }
-
 names = ['Оля', 'Петя', 'Вася', 'Маша']
+
 
 
 def gender_reveal(name):
@@ -38,6 +42,8 @@ def gender_reveal(name):
 
 for name in names:
     print(f'{name} : {gender_reveal(name)}')
+
+
 
 
 # Задание 4
@@ -56,6 +62,8 @@ groups = [
 for index, group in enumerate(groups, start=1):
     print(f' Группа {index} : {len(group)} ученика')
 
+>
+
 
 # Задание 5
 # Для каждой пары учеников нужно с новой строки перечислить учеников, которые в неё входят
@@ -70,3 +78,5 @@ groups = [
 ]
 for index, group in enumerate(groups, start=1):
     print(f' Группа {index} : {group}')
+
+

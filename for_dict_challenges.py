@@ -12,33 +12,21 @@ students = [
     {'first_name': 'Маша'},
     {'first_name': 'Петя'},
 ]
-list_names = list()
-for dicts in students:
-    new_name = (dicts['first_name'])
-    list_names.append(new_name)
-
-for li in set(list_names):
-    list_count = list_names.count(li)
-    print(f'{li}:{list_count}')
-
-
+# ???
 
 
 # Задание 2
 # Дан список учеников, нужно вывести самое часто повторящееся имя
 # Пример вывода:
 # Самое частое имя среди учеников: Маша
-
-
-from collections import Counter
-
-students_2 = [
+students = [
     {'first_name': 'Вася'},
     {'first_name': 'Петя'},
     {'first_name': 'Маша'},
     {'first_name': 'Маша'},
     {'first_name': 'Оля'},
 ]
+
 list_names = list()
 for dicts in students_2:
     new_name = dicts['first_name']
@@ -64,6 +52,7 @@ for name, counter in count_final.items():
 
 
 
+
 # Задание 3
 # Есть список учеников в нескольких классах, нужно вывести самое частое имя в каждом классе.
 # Пример вывода:
@@ -86,7 +75,7 @@ school_students = [
         {'first_name': 'Саша'},
     ],
 ]
-list_names = list()
+# ???
 
 for index, lists in enumerate(school_students, start=1):
     list_names = list()
@@ -102,6 +91,8 @@ for index, lists in enumerate(school_students, start=1):
             print(name)
     
             
+
+
 
 
 #Задание 4.  Для каждого класса нужно вывести количество девочек и мальчиков в нём.
@@ -137,23 +128,3 @@ for lists in school:
            девочки {count_girls} ''')
             
             
-
-
-
-# Задание 5
-# По информации о учениках разных классов нужно найти класс, в котором больше всего девочек и больше всего мальчиков
-# Пример вывода:
-# Больше всего мальчиков в классе 3c
-# Больше всего девочек в классе 2a
-
-school = [
-    {'class': '2a', 'students': [{'first_name': 'Маша'}, {'first_name': 'Оля'}]},
-    {'class': '3c', 'students': [{'first_name': 'Олег'}, {'first_name': 'Миша'}]},
-]
-is_male = {
-    'Маша': False,
-    'Оля': False,
-    'Олег': True,
-    'Миша': True,
-}
-# ???
