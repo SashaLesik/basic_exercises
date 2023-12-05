@@ -46,9 +46,13 @@ for dicts in students_2:
 count = Counter(list_names)
 count_final = dict(count)
 max_val = max(count_final.values())
-final_dict = {k: v for k, v in count_final.items() if v == max_val}
+#final_dict = {k: v for k, v in count_final.items() if v == max_val}
+#print("Самое частое имя среди учеников:")
+#print(*final_dict)
 print("Самое частое имя среди учеников:")
-print(*final_dict)
+for name, counter in count_final.items():
+    if counter == max_val:
+        print(name)
 
 
 
@@ -92,9 +96,10 @@ for index, lists in enumerate(school_students, start=1):
     count_st = Counter(list_names)
     count_final = dict(count_st)
     max_val = max(count_final.values())
-    final_dict = {k: v for k, v in count_final.items() if v == max_val}
-    print(f'Самое частое имя в классе {index}')
-    print(*final_dict)
+    for name, counter in count_final.items():
+        if counter == max_val:
+            print(f'Самое частое имя в классе {index}')
+            print(name)
     
             
 
@@ -116,7 +121,23 @@ is_male = {
     'Миша': True,
     'Даша': False,
 }
-# ???
+
+for lists in school:
+    count_boys = 0  # Вопрос: можно ли здесь использовать enumerate (Если да, то как?)
+    count_girls = 0
+    for dict in lists["students"]: 
+        name = dict['first_name']
+        
+        if is_male[name] is True:
+            count_boys += 1            
+        else:
+            count_girls += 1
+                    
+    print(f''' В классе {lists["class"]} мальчики {count_boys},
+           девочки {count_girls} ''')
+            
+            
+
 
 
 # Задание 5
