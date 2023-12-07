@@ -4,6 +4,8 @@
 # Вася: 1
 # Маша: 2
 # Петя: 2
+from collections import Counter
+
 
 students = [
     {'first_name': 'Вася'},
@@ -12,20 +14,29 @@ students = [
     {'first_name': 'Маша'},
     {'first_name': 'Петя'},
 ]
-# ???
+
+list_names = list()
+for dicts in students:
+    new_name = (dicts['first_name'])
+    list_names.append(new_name)
+
+for li in set(list_names):
+    list_count = list_names.count(li)
+    print(f'{li}:{list_count}')
 
 
 # Задание 2
 # Дан список учеников, нужно вывести самое часто повторящееся имя
 # Пример вывода:
 # Самое частое имя среди учеников: Маша
-students = [
+students_2 = [
     {'first_name': 'Вася'},
     {'first_name': 'Петя'},
     {'first_name': 'Маша'},
     {'first_name': 'Маша'},
     {'first_name': 'Оля'},
 ]
+
 
 list_names = list()
 for dicts in students_2:
@@ -41,15 +52,6 @@ print("Самое частое имя среди учеников:")
 for name, counter in count_final.items():
     if counter == max_val:
         print(name)
-
-
-
-
-
-    
-    
-    
-
 
 
 
@@ -114,7 +116,7 @@ is_male = {
 }
 
 for lists in school:
-    count_boys = 0  # Вопрос: можно ли здесь использовать enumerate (Если да, то как?)
+    count_boys = 0  
     count_girls = 0
     for dict in lists["students"]: 
         name = dict['first_name']
@@ -127,4 +129,85 @@ for lists in school:
     print(f''' В классе {lists["class"]} мальчики {count_boys},
            девочки {count_girls} ''')
             
+# Задание 5
+# По информации о учениках разных классов нужно найти класс, в котором больше всего девочек и больше всего мальчиков
+# Пример вывода:
+# Больше всего мальчиков в классе 3c
+# Больше всего девочек в классе 2a
+
+school = [
+    {'class': '2a', 'students': [{'first_name': 'Маша'}, {'first_name': 'Оля'}]},
+    {'class': '3c', 'students': [{'first_name': 'Олег'}, {'first_name': 'Миша'}]},
+]
+is_male = {
+    'Маша': False,
+    'Оля': False,
+    'Олег': True,
+    'Миша': True,
+}
+
+final_dict ={}
+for lists in school:
+    print(lists)
+    count_boys = 0 
+    count_girls = 0
+    
+    
+    for dict in lists["students"]: 
+        print(dict)
+        name = dict['first_name']
+        print(name)
+        
+        if is_male[name]:
+            count_boys += 1            
+        else:
+            count_girls += 1
+        final_dict[lists["class"]] = (count_boys, count_girls)
+        
+    print(count_girls)
+    print(count_boys)
+
+    
+print(final_dict)
+items = final_dict.items()
+print(items)
+class_name_boys, class_data_boys = max(items, key=lambda item: item[1][0])
+class_name_girls, class_data_girls = max(items, key=lambda item: item[1][1])
+print(f'Больше всего мальчиков в классе {class_name_boys}')
+print(f'Больше всего девочек в классе {class_name_girls}')
+
+
+          
+
+
+                  
+    
+    
+    
+        
+
+
+
+
+
+    #if (count_boys + number) > (count_girls+number):
+        #print(f"в классе {class_name} больше мальчиков")
+    #elif (count_boys + number) == (count_girls+number):
+        #print(f"в классе {class_name} одинаково мальчиков и девочек")
+    #else:
+        #print(f"в классе {class_name} больше девочек")
+    
+    #for lists_ in final_list:
+       # number_1 = lists_1[class_name]
+        #print(number_1)
+    
+    #print(f'''Больше всего девочек{(max_val_girls)} 
+          #в классе: {class_name},
+          #Больше всего мальчиков {max(count_boys)}
+          #в классе{class_name}''')
+
+
             
+
+    
+
